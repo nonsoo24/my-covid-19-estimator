@@ -18,20 +18,15 @@ const getInfectionsByRequestedTime = (periodType, timeToElapse) => {
       break;
   }
 
-  return (2 ** Math.trunc(noOfDays));
+  return Math.trunc(noOfDays);
 };
 
 const covid19ImpactEstimator = (data) => {
+  const noOfDays = getDaysFromPeriodType(data.periodType, data.timeToElapse);
   const currentlyInfected = data.reportedCases * 10;
   const severeCurrentlyInfected = data.reportedCases * 50;
-  const infectionsByRequestedTime = currentlyInfected * getInfectionsByRequestedTime(
-    data.periodType,
-    data.timeToElapse
-  );
-  const severeInfectionsByRequestedTime = severeCurrentlyInfected * getInfectionsByRequestedTime(
-    data.periodType,
-    data.timeToElapse
-  );
+  const infectionsByRequestedTime = currentlyInfected * (2 ** noOfDays);
+  const severeInfectionsByRequestedTime = severeCurrentlyInfected * (2 ** noOfDays);
   const impactSevereCasesByRequestedTime = infectionsByRequestedTime * 0.15;
   const severeImpactSevereCasesByRequestedTime = severeInfectionsByRequestedTime * 0.15;
   const availableBedSpace = data.totalHospitalBeds * 0.35;
