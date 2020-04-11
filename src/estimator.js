@@ -1,4 +1,4 @@
-const getInfectionsByRequestedTime = (periodType, timeToElapse) => {
+const getDaysFromPeriodType = (periodType, timeToElapse) => {
   let noOfDays = 0;
 
   switch (periodType) {
