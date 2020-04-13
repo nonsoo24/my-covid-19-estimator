@@ -3,30 +3,30 @@ const getDaysFromPeriodType = (periodType, timeToElapse) => {
 
   switch (periodType) {
     case 'days':
-      noOfDays = timeToElapse / 3;
+      noOfDays = timeToElapse;
       break;
 
     case 'weeks':
-      noOfDays = (timeToElapse * 7) / 3;
+      noOfDays = timeToElapse * 7;
       break;
 
     case 'months':
-      noOfDays = (timeToElapse * 30) / 3;
+      noOfDays = timeToElapse * 30;
       break;
 
     default:
       break;
   }
 
-  return Math.trunc(noOfDays);
+  return noOfDays;
 };
 
 const covid19ImpactEstimator = (data) => {
   const noOfDays = getDaysFromPeriodType(data.periodType, data.timeToElapse);
   const currentlyInfected = data.reportedCases * 10;
   const severeCurrentlyInfected = data.reportedCases * 50;
-  const infectionsByRequestedTime = currentlyInfected * (2 ** noOfDays);
-  const severeInfectionsByRequestedTime = severeCurrentlyInfected * (2 ** noOfDays);
+  const infectionsByRequestedTime = Math.trunc(currentlyInfected * (2 **  Math.trunc(noOfDays / 3)));
+  const severeInfectionsByRequestedTime = math.trunc(severeCurrentlyInfected * (2 ** Math.trunc(noOfDays / 3)));
   const impactSevereCasesByRequestedTime = infectionsByRequestedTime * 0.15;
   const severeImpactSevereCasesByRequestedTime = severeInfectionsByRequestedTime * 0.15;
   const availableBedSpace = data.totalHospitalBeds * 0.35;
