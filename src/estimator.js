@@ -25,8 +25,10 @@ const covid19ImpactEstimator = (data) => {
   const noOfDays = getDaysFromPeriodType(data.periodType, data.timeToElapse);
   const currentlyInfected = data.reportedCases * 10;
   const severeCurrentlyInfected = data.reportedCases * 50;
-  const infectionsByRequestedTime = Math.trunc(currentlyInfected * (2 **  Math.trunc(noOfDays / 3)));
-  const severeInfectionsByRequestedTime = math.trunc(severeCurrentlyInfected * (2 ** Math.trunc(noOfDays / 3)));
+  const infectionsByRequestedTime = Math.trunc(currentlyInfected * (2 ** Math.trunc(
+    noOfDays / 3)));
+  const severeInfectionsByRequestedTime = Math.trunc(severeCurrentlyInfected * (2 ** Math.trunc(
+    noOfDays / 3)));
   const impactSevereCasesByRequestedTime = infectionsByRequestedTime * 0.15;
   const severeImpactSevereCasesByRequestedTime = severeInfectionsByRequestedTime * 0.15;
   const availableBedSpace = data.totalHospitalBeds * 0.35;
