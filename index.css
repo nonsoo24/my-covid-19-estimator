@@ -1,0 +1,32 @@
+body {
+    background-image: url(./Img/sdg.png);
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.main-container {
+    padding-top: 60px;
+}
+
+header {
+    background: #0827BF !important;
+}
+
+.navbar-brand,
+.nav-item {
+    color: #fff;
+}
+
+.btn-primary {
+    background: #0827BF !important;
+}
+
+a:hover{
+    color: #fff;
+}
