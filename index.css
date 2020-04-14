@@ -1,0 +1,53 @@
+body {
+    background-image: url(./Img/SDG-min.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right -30.000em bottom -1.280em;
+    background-size: 43.750em 43.750em;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.main-container {
+    padding-top: 3.750em;
+}
+
+header {
+    background: #0827BF !important;
+}
+
+.navbar-brand,
+.nav-item {
+    color: #FFFFFA;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.875em;
+}
+
+span {
+    color: #FBAF35;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: #0827BF !important;
+}
+
+.btn-primary:hover {
+    color: #0827BF;
+    border: 0.063em solid #0827BF;
+    background: #fff !important;
+}
+
+a:hover {
+    color: #fff;
+}
+
+label{
+    font-weight: 600;
+}
